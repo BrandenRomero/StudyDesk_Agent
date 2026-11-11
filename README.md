@@ -3,8 +3,6 @@
 A CS4680 AI Agent Project: turn a student's request into a reviewed plan that
 performs real file, SQLite task, and arithmetic operations.
 
-Repository: [BrandenRomero/StudyDesk_Agent](https://github.com/BrandenRomero/StudyDesk_Agent).
-
 ## Run locally
 
 Requires **Python 3.11 or newer**. From this `assignment4` directory:

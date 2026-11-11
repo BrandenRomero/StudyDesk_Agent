@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>StudyDesk · Your work, in motion</title><link rel="stylesheet" href="/style.css"><script defer src="/app.js"></script></head>
+<body>
+<aside class="sidebar">
+  <a class="brand" href="/" aria-label="StudyDesk home"><span class="brand-icon">s.</span> StudyDesk</a>
+  <div class="sidebar-label">YOUR WORKSPACE</div>
+  <div class="nav-current"><span>✦</span> Agent desk <span class="nav-count">01</span></div>
+  <div class="sidebar-copy">A little less admin.<br>A little more focus.</div>
+  <div class="domains"><div><span>01</span> Notes & files</div><div><span>02</span> Tasks & lists</div><div><span>03</span> Calculations</div></div>
+  <div class="sidebar-bottom"><span class="status-dot"></span> Isolated workspace<div>CS4680 · AI Agent Project</div></div>
+</aside>
+<main>
+  <header><span>WORKSPACE / <strong>AGENT DESK</strong></span><span class="header-note">Plan it. Review it. Make it happen.</span></header>
+  <section class="intro"><div class="eyebrow">A CLEARER DESK, A CLEARER MIND</div><h1>Small tasks.<br><em>Handled thoughtfully.</em></h1><p>Turn a request into real actions. Organize your notes, manage<br class="desktop"> your study list, and work out the numbers in one place.</p></section>
+  <div class="workspace-grid">
+    <div class="agent-column">
+      <section class="card composer" aria-labelledby="request-heading">
+        <div class="card-heading"><h2 id="request-heading">What would you like to do?</h2><span class="tiny-label">01 / REQUEST</span></div>
+        <form id="request-form">
+          <label class="sr-only" for="prompt">Your request</label>
+          <textarea id="prompt" maxlength="4000" rows="4" placeholder="Create note exam.md: Review search algorithms; Add task: Practice BFS" required></textarea>
+          <div class="composer-footer"><fieldset id="mode" class="mode-label"><legend class="sr-only">Planner mode</legend><label><input type="radio" name="mode" value="demo" checked> Offline demo</label><label><input type="radio" name="mode" value="openai"> OpenAI</label></fieldset><button type="submit" id="plan-button" class="primary">Build a plan <span>↗</span></button></div>
+        </form>
+        <p id="mode-info" class="mode-info">Offline demo uses example commands, without an LLM or API key.</p>
+      </section>
+      <div class="example-heading">A FEW WAYS TO GET STARTED <span>↙</span></div>
+      <div class="examples"><button type="button" data-example="Create note exam.md: Review search algorithms; Add task: Practice BFS"><span>▤</span><strong>Prepare for an exam</strong><small>Create a note + a study task</small></button><button type="button" data-example="Calculate (45 + 15) * 3"><span>∑</span><strong>Plan study time</strong><small>Work out three study blocks</small></button><button type="button" data-example="List notes; List tasks"><span>☷</span><strong>See the big picture</strong><small>Check notes and your to-do list</small></button></div>
+      <div id="notice" role="status" aria-live="polite" hidden></div>
+      <section class="card plan-card" id="plan-card" hidden aria-labelledby="plan-heading">
+        <div class="card-heading"><h2 id="plan-heading">Your action plan</h2><span class="tiny-label">02 / REVIEW</span></div>
+        <p id="plan-summary"></p><ol id="actions" class="action-list"></ol>
+        <div id="risk-box" class="risk-box" hidden><strong>This plan changes existing data</strong><ul id="warnings"></ul><label><input id="confirmation" type="checkbox"> I confirm these deletions or overwrites.</label></div>
+        <p class="muted">Review the details. Nothing runs until you choose Execute.</p>
+        <div class="plan-buttons"><button id="execute-button" type="button" class="primary">Execute plan <span>→</span></button><button id="cancel-button" type="button" class="secondary">Cancel</button></div>
+      </section>
+      <section class="card" id="results-card" hidden aria-labelledby="results-heading"><div class="card-heading"><h2 id="results-heading">Execution results</h2><span class="tiny-label">03 / RESULTS</span></div><div id="results"></div></section>
+    </div>
+    <aside class="workspace-column" aria-label="Workspace overview">
+      <section class="card overview"><div class="card-heading"><h2>On your desk</h2><span class="little-plus">+</span></div><p class="muted">Saved in this browser's workspace</p><div class="stats"><div><strong id="note-count">0</strong><span>NOTES</span></div><div><strong id="task-count">0</strong><span>OPEN TASKS</span></div></div><div class="section-title">NOTES <span>.md / .txt</span></div><ul id="notes" class="desk-list"></ul><div class="section-title">STUDY LIST <span>SQLite</span></div><ul id="tasks" class="desk-list"></ul></section>
+      <section class="safety-note"><span>◇</span><div><strong>You're in the loop.</strong><p>Every action is validated and logged. Deletions and overwrites need your confirmation.</p></div></section>
+      <details class="audit"><summary>Activity log <span id="audit-count">0 events</span></summary><p class="muted">Latest 50 events · UTC</p><div id="audit"></div></details>
+    </aside>
+  </div>
+  <footer><span>BUILT FOR THE LITTLE THINGS THAT ADD UP.</span><span>StudyDesk / CS4680</span></footer>
+</main>
+</body></html>

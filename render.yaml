@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: studydesk-agent
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_MODEL
+        value: gpt-4o-mini
+      - key: APP_PASSWORD
+        sync: false
+      - key: DATA_DIR
+        value: /app/data

@@ -1,0 +1,3 @@
+# Offline local use and tests need only Python 3.11+.
+# Use Waitress for a hosted, threaded WSGI server.
+waitress==3.0.2
